@@ -83,9 +83,10 @@ void push_back(List *list, int *data, int array_size) {
 // set iterator to move n elements forward from its current position
 void skip_forward(iterator* itr, int n) {
     Node *p = itr->node_ptr;
-    for (int i = 0; i < n; i++)
+    int suma = 0;
+    while (suma != n)
     {
-        p = p->next;
+        
     }
 }
 
@@ -148,12 +149,6 @@ void remove_at(List *list, int n) {
         p = p->next;
     }
     p = p->prev;
-    /*
-    if (suma > n)
-    {
-        p = p->prev;
-    }
-     */
     if (p->array_size > 1){
         int index = n - suma + p->array_size - 1;
         int *dat = p->data;
