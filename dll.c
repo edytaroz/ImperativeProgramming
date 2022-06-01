@@ -143,12 +143,18 @@ int get_backward(List *list, int n) {
 void remove_at(List *list, int n) {
     int suma = 0;
     Node *p = list->head;
-    while (suma < n)
+    while (suma < n && p->next != NULL)
     {
         suma += p->array_size;
         p = p->next;
     }
-    p = p->prev;
+    if (suma >= n) {
+        p = p->prev;
+    }
+    else
+    {
+        suma += p->array_size;
+    }
     if (p->array_size > 1){
         int index = n - suma + p->array_size - 1;
         int *dat = p->data;
